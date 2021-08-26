@@ -1,0 +1,8 @@
+{
+  "/*": {
+    "target": "https://tuto-react-2fe65-default-rtdb.europe-west1.firebasedatabase.app",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
