@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NbAuthComponent } from './auth/auth.component';
 
-
 import { NgxLoginComponent } from './auth/login/login.component';
 import { RedirectComponent } from './auth/login/redirect/redirect.component';
+import { HomeComponent } from './dashboard/home/home.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'auth',
     component: NbAuthComponent,
     children: [
       {
-        path: '',
+        path: 'login',
         component: NgxLoginComponent, // <---
       },
       {
@@ -21,6 +21,13 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
+  { path: '**', redirectTo: 'home' },
 
   // {
   //   path: 'auth',

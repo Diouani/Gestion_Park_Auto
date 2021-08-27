@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule, NbIconModule, NbSidebarModule, NbMenuModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {
   NbPasswordAuthStrategy,
@@ -16,10 +16,18 @@ import { NgxAuthModule } from './auth/auth.module';
 import { RoleProvider } from './role.provider';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
+import { HomeComponent } from './dashboard/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
+    BrowserAnimationsModule,
+    NbIconModule,               // <---------
+    NbSidebarModule.forRoot(),  // <---------
+    NbMenuModule.forRoot(),     // <---------
+    NbThemeModule.forRoot({name: 'default'}),
+    NbLayoutModule,
+    NbEvaIconsModule,
     HttpClientModule,
     CommonModule,
     BrowserModule,
