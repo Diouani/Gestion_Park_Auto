@@ -1,1 +1,35 @@
-<p>users works!</p>
+<div class="container-fluid">
+  <div class="d-flex flex-row-reverse bd-highlight">
+    <nb-dialog-backdrop-click></nb-dialog-backdrop-click>
+  </div>
+</div>
+
+<table class="table table-hover table-bordred mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Matricule</th>
+      <th scope="col">Nom d'utilisateur</th>
+      <th scope="col">Role</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of usersData">
+      <td>{{ user.matricule }}</td>
+      <td>{{ user.nomDutilisateur }}</td>
+      <td>{{ user.role }}</td>
+
+      <td>
+        <button
+          class="btn btn-primary me-3"
+          nbButton
+          (click)="openWithoutBackdropClick()"
+        >
+          Edit</button
+        ><button (click)="deleteUser(user.id)" class="btn btn-danger">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

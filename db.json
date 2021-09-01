@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "matricule": "dsdkj",
+      "nomDutilisateur": "SAdmin",
+      "role": "Administrateur"
+    },
+    {
+      "matricule": "ZIO97",
+      "nomDutilisateur": "DAhmed",
+      "role": "Utilisateur",
+      "id": 2
+    },
+    {
+      "matricule": "JK786",
+      "nomDutilisateur": "DKacem",
+      "role": "Administrateur",
+      "id": 5
+    }
+  ]
+}

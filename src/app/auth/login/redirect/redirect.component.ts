@@ -7,9 +7,7 @@ import { NbAccessChecker } from '@nebular/security';
   styleUrls: ['./redirect.component.scss'],
 })
 export class RedirectComponent implements OnInit {
-  constructor(public accessChecker: NbAccessChecker) {
-    console.log(accessChecker.isGranted('view', 'auto'));
-  }
+  constructor(public accessChecker: NbAccessChecker) {}
 
   ngOnInit(): void {}
 }

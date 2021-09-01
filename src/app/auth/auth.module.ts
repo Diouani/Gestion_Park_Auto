@@ -26,6 +26,7 @@ import { NbAuthComponent } from './auth.component';
 
 import { NgxLoginComponent } from './login/login.component';
 import { RedirectComponent } from './login/redirect/redirect.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -44,7 +45,7 @@ import { RedirectComponent } from './login/redirect/redirect.component';
 
     NbAuthModule,
   ],
-  declarations: [NgxLoginComponent, NbAuthComponent, RedirectComponent],
+  declarations: [NgxLoginComponent, NbAuthComponent, RedirectComponent, RegisterComponent],
   providers: [{ provide: NbTokenStorage, useClass: NbTokenLocalStorage }],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
