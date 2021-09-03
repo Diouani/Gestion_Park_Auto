@@ -1,0 +1,65 @@
+<!-- <nb-card>
+  <nb-card-header>
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between bd-highlight">
+        <span style="padding: 10px">Users</span>
+        <nb-dialog-backdrop-click></nb-dialog-backdrop-click>
+      </div></div
+  ></nb-card-header>
+  <nb-card-body>
+    <table class="table table-hover table-bordered mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Matricule</th>
+          <th scope="col">Nom d'utilisateur</th>
+          <th scope="col">Role</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersData">
+          <td>{{ user.matricule }}</td>
+          <td>{{ user.nomDutilisateur }}</td>
+          <td>{{ user.role }}</td>
+
+          <td>
+            <nb-icon
+              [options]="{ animation: { type: 'pulse' } }"
+              (click)="openWithoutBackdropClick()"
+              icon="eye"
+              style="
+                cursor: pointer;
+                color: rgb(151, 151, 153);
+                margin-right: 10px;
+              "
+            ></nb-icon>
+            <nb-icon
+              [options]="{ animation: { type: 'pulse' } }"
+              (click)="openWithoutBackdropClick()"
+              icon="edit"
+              style="
+                cursor: pointer;
+                color: rgb(4, 28, 136);
+                margin-right: 10px;
+              "
+            ></nb-icon>
+
+            <nb-icon
+              [options]="{ animation: { type: 'pulse' } }"
+              (click)="deleteUser(user.id)"
+              icon="trash"
+              style="cursor: pointer; color: red; margin-right: 10px"
+            ></nb-icon>
+            <a href="" style="text-decoration: none"
+              ><i class="nb-search"></i
+            ></a>
+            <a href="" style="text-decoration: none"
+              ><i class="nb-trash"></i
+            ></a>
+            <a href="" style="text-decoration: none"><i class="nb-edit"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card> -->

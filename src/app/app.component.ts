@@ -10,4 +10,6 @@ import { NbMenuItem, NbSidebarService } from '@nebular/theme';
 export class AppComponent {
   title = 'GPA';
   constructor(public accessChecker: NbAccessChecker) {}
+
+  
 }

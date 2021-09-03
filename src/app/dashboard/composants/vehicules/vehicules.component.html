@@ -1,5 +1,13 @@
-<!-- <nb-tabset>
-  <nb-tab tabTitle="Type de Possesions"> Type de Possesions </nb-tab>
-  <nb-tab tabTitle="Type de Paiements"> Type de Paiements </nb-tab>
-  <nb-tab tabTitle="Type de Véhicules"> Type de Véhicules </nb-tab>
-</nb-tabset> -->
+<nb-card>
+  <nb-card-header> Liste des véhicules </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table
+      class="order-table"
+      [settings]="settings"
+      [source]="source"
+      (deleteConfirm)="onDeleteConfirm($event)"
+    >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

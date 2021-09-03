@@ -25,6 +25,10 @@ export class DashboardComponent implements OnInit {
           link: 'composants/vehicule',
         },
         {
+          title: 'Véhicules-two',
+          link: 'composants/vehicule-two',
+        },
+        {
           title: 'Fournisseurs',
         },
         {

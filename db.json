@@ -1,22 +1,22 @@
 {
   "users": [
     {
-      "id": 1,
-      "matricule": "dsdkj",
-      "nomDutilisateur": "SAdmin",
-      "role": "Administrateur"
-    },
-    {
       "matricule": "ZIO97",
       "nomDutilisateur": "DAhmed",
       "role": "Utilisateur",
       "id": 2
     },
     {
-      "matricule": "JK786",
-      "nomDutilisateur": "DKacem",
+      "matricule": "FT9876",
+      "nomDutilisateur": "Ilyas",
       "role": "Administrateur",
-      "id": 5
+      "id": 6
+    },
+    {
+      "matricule": "FT9876ds",
+      "nomDutilisateur": "Ilyasaa",
+      "role": "Administrateur",
+      "id": 7
     }
   ]
 }

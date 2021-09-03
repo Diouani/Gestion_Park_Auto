@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VehiculesComponent } from './vehicules.component';
+import { DualListThreeComponent } from './dual-list-three.component';
 
-describe('VehiculesComponent', () => {
-  let component: VehiculesComponent;
-  let fixture: ComponentFixture<VehiculesComponent>;
+describe('DualListThreeComponent', () => {
+  let component: DualListThreeComponent;
+  let fixture: ComponentFixture<DualListThreeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VehiculesComponent ]
+      declarations: [ DualListThreeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VehiculesComponent);
+    fixture = TestBed.createComponent(DualListThreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

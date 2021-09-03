@@ -5,16 +5,26 @@
       class="sidebar-toggle"
       icon="menu-2-outline"
     ></nb-icon>
-    <h2
+    <h3
       style="
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
           Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
           Segoe UI Symbol;
+        width: 100%;
       "
     >
       &nbsp; &nbsp; Gestion Park Auto
-    </h2>
-    <a routerLink="/logout" class="d-flex">Logout</a>
+    </h3>
+    <div class="container-fluid">
+      <div class="d-flex flex-row-reverse bd-highlight">
+        <a
+          style="text-decoration: none; color: white"
+          class="btn btn-secondary btn-lg"
+          routerLink="/logout"
+          >Logout</a
+        >
+      </div>
+    </div>
   </nb-layout-header>
 
   <nb-sidebar class="menu-sidebar" responsive start>

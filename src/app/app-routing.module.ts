@@ -13,6 +13,9 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { VehiculesComponent } from './dashboard/composants/vehicules/vehicules.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { TypesComponent } from './dashboard/composants/types/types.component';
+import { DualListComponentC } from './components/dual-list/dual-list.component';
+import { DualListThreeComponent } from './components/dual-list-three/dual-list-three.component';
+// import { VehiculesTwoComponent } from './dashboard/composants/vehicules-two/vehicules-two.component';
 
 export const routes: Routes = [
   {
@@ -37,12 +40,15 @@ export const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
+      { path: 'composants/vehicule', component: VehiculesComponent },
+      // { path: 'composants/vehicule-two', component: VehiculesTwoComponent },
+      { path: 'dual-list', component: DualListComponentC },
       {
         path: 'users',
         component: UsersComponent,
       },
-      { path: '', component: HomeComponent },
-      { path: 'composants/vehicule', component: VehiculesComponent },
+      { path: '', component: DualListThreeComponent },
+
       { path: 'types', component: TypesComponent },
       {
         path: 'register',

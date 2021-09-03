@@ -30,7 +30,6 @@ import { NgxAuthModule } from './auth/auth.module';
 import { RoleProvider } from './role.provider';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { AuthGuard } from './guard/auth-guard.service';
@@ -39,9 +38,27 @@ import { BackdropClickDialogComponent } from './users/modal/backdrop-dialog.comp
 import { DialogBackdropClickComponent } from './users/modal/modal.component';
 import { TypesComponent } from './dashboard/composants/types/types.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { SmartTableService } from './shared/smart-table/smart-table.service';
+import { SmartTableData } from './shared/smart-table/smart-table';
+import { Ng2SmartTableComponent, Ng2SmartTableModule } from 'ng2-smart-table';
+import { ModalComponent } from './components/modal/modal.component';
+
+import { SweetAlertService } from 'angular-sweetalert-service';
+import { DataTablesModule } from 'angular-datatables';
+import { UiSwitchModule } from 'ngx-ui-switch';
+import { VehiculesTwoComponent } from './dashboard/vehicules-two/vehicules-two.component';
+import { AngularDualListBoxModule } from 'angular-dual-listbox';
+import {
+  DualListComponentC,
+} from './components/dual-list/dual-list.component';
+import { DualListThreeComponent } from './components/dual-list-three/dual-list-three.component';
+// import { DualListTransferComponent } from './components/dual-list-transfer/dual-list-transfer.component';
 
 @NgModule({
   declarations: [
+    VehiculesTwoComponent,
     AppComponent,
     HomeComponent,
     UsersComponent,
@@ -50,8 +67,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     BackdropClickDialogComponent,
     DialogBackdropClickComponent,
     TypesComponent,
+    ModalComponent,
+    DualListComponentC,
+    DualListThreeComponent,
+    // DualListTransferComponent,
+    // VehiculesTwoComponent,
   ],
   imports: [
+    AngularDualListBoxModule,
+    Ng2SmartTableModule,
     NbCardModule,
     NbTabsetModule,
     BrowserAnimationsModule,
@@ -68,20 +92,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NoopAnimationsModule,
     NgxAuthModule,
     NbSecurityModule.forRoot({
-      accessControl: {
-        user: {
-          view: ['auto', 'hr'],
-        },
-        moderator: {
-          parent: 'user',
-          create: 'auto',
-        },
-        admin: {
-          parent: 'moderator',
-          create: 'hr',
-          remove: '*',
-        },
-      },
+      accessControl: {},
     }),
     NbThemeModule.forRoot({ name: 'default' }),
     NbAuthModule.forRoot({
@@ -112,11 +123,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     NbEvaIconsModule,
     NbDialogModule.forRoot(),
     ReactiveFormsModule,
-
+    NgbModule,
+    DataTablesModule,
+    UiSwitchModule,
   ],
   providers: [
     { provide: NbRoleProvider, useClass: RoleProvider },
     AuthGuard,
+    SmartTableService,
+    SweetAlertService,
   ],
 
   bootstrap: [AppComponent],
