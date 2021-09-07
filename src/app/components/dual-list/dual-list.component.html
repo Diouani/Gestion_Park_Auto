@@ -1,3 +1,4 @@
+<button (click)="addNewItem(confirmed.sift)">Add to parent's list</button>
 <div class="dual-list">
   <div
     class="listbox"
@@ -33,6 +34,7 @@
         (drop)="drop($event, confirmed)"
         (dragover)="allowDrop($event, available)"
         (dragleave)="dragLeave()"
+        *ngIf="source as source"
       >
         <li
           *ngFor="let item of available.sift; let idx = index"
@@ -48,7 +50,27 @@
           (dragstart)="drag($event, item, available)"
           (dragend)="dragEnd(available)"
         >
+          <label>{{ item | json }}</label>
+        </li>
+
+        <li
+          *ngFor="let item of available.sift; let idx = index"
+          (click)="
+            disabled ? null : selectItem(available.pick, item);
+            shiftClick($event, idx, available, item)
+          "
+          [ngClass]="{
+            selected: isItemSelected(available.pick, item),
+            disabled: disabled
+          }"
+          [draggable]="!disabled && format.draggable"
+          (dragstart)="drag($event, item, available)"
+          (dragend)="dragEnd(available)"
+        >
           <label>{{ item._name }}</label>
+        </li>
+        <li>
+          <label>{{ source | json }}</label>
         </li>
       </ul>
     </div>
@@ -70,6 +92,7 @@
       >
         Unselect
       </button>
+      <pre>{{ available | json }}</pre>
     </div>
   </div>
 
@@ -124,7 +147,6 @@
           (dragend)="dragEnd(confirmed)"
         >
           <label>{{ item._name }}</label>
-          
         </li>
       </ul>
     </div>

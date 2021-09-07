@@ -2,6 +2,7 @@ import { IterableDiffers, Input } from '@angular/core';
 import { Component, OnInit, Output } from '@angular/core';
 import { DualListComponent } from 'angular-dual-listbox';
 import { EventEmitter } from '@angular/core';
+
 @Component({
   selector: 'app-custom-listbox',
   templateUrl: './dual-list.component.html',
@@ -9,18 +10,20 @@ import { EventEmitter } from '@angular/core';
 })
 export class DualListComponentC extends DualListComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.confirmed);
+    this.newItemEvent.emit(this.confirmed.sift);
   }
 
+  @Input() role = '';
   @Input() sourceName = '';
   @Input() targetName = '';
 
   @Output() selectChange = new EventEmitter();
+  @Output() newItemEvent = new EventEmitter();
 
   constructor(differs: IterableDiffers) {
     super(differs);
   }
-
+  addNewItem(value) {}
   moveAll() {
     this.selectAll(this.available);
     this.moveItem(this.available, this.confirmed);

@@ -3,7 +3,10 @@
     <div class="container-fluid">
       <div class="d-flex justify-content-between bd-highlight">
         <span style="padding: 10px">Gestion des privilèges</span>
-        <button class="btn btn-primary" (click)="displayData()">
+        <button
+          class="btn btn-primary"
+          (click)="addItem(confirmed, username.value)"
+        >
           Ajout du Role
         </button>
         <!-- <nb-dialog-backdrop-click></nb-dialog-backdrop-click> -->
@@ -67,10 +70,18 @@
     </table> -->
 
     <label for="" class="mb-3"> <strong>Intitulé du role</strong> </label>
-    <input type="text" class="form-control mb-3" />
+    <input
+      type="text"
+      class="form-control mb-3"
+      id="username"
+      name="username"
+      #username
+    />
     <div style="text-align: center">
       <app-custom-listbox
+        (newItemEvent)="(confirmed)"
         #child
+        [role]="username.value"
         key="id"
         display="name"
         [source]="source"
@@ -86,6 +97,15 @@
     <div class="d-flex justify-content-between bd-highlight">
       <pre>{{ source | json }}</pre>
       <pre>{{ confirmed | json }}</pre>
+      <pre style="background-color: cadetblue">
+        <h1>HELLO</h1>
+        <ul>
+          <li >{{data | json}}</li>
+        </ul>
+
+
+        <!-- {{ selectChange  }} -->
+      </pre>
     </div>
     <!-- <pre>{{ message | json }}</pre>
     <pre>{{ target | json }}</pre>

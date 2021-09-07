@@ -18,5 +18,22 @@
       "role": "Administrateur",
       "id": 7
     }
+  ],
+  "roles": [
+    {
+      "roleName": "Administrateur reseaux",
+      "privileges": [
+        { "name": "Lecture Section Véhicule", "id": 1 },
+        { "name": "Ajout Section Véhicule", "id": 2 },
+        { "name": "Mise a jour Section Véhicule", "id": 3 },
+        { "name": "Supression Section Véhicule", "id": 4 }
+      ]
+    }
+  ],
+  "privileges": [
+    { "name": "Lecture Section Véhicule", "id": 1 },
+    { "name": "Ajout Section Véhicule", "id": 2 },
+    { "name": "Mise a jour Section Véhicule", "id": 3 },
+    { "name": "Supression Section Véhicule", "id": 4 }
   ]
 }

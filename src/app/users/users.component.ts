@@ -8,6 +8,7 @@ import { BackdropClickDialogComponent } from './modal/backdrop-dialog.component'
 import { ModalComponent } from '../components/modal/modal.component';
 import { ViewChild } from '@angular/core';
 import { DualListComponent } from 'angular-dual-listbox';
+import { UserManagementServiceService } from '../shared/management.service';
 
 @Component({
   selector: 'app-users',
@@ -15,7 +16,16 @@ import { DualListComponent } from 'angular-dual-listbox';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
+  data = [];
+
+  addItem(confirmed, username) {
+    this.data.push(confirmed);
+    this.data.push(username);
+    console.log(this.data);
+    console.log(username);
+  }
   /* tslint:disable quotemark */
+  selectChange;
   static tube: any = [
     { name: 'Lecture Section Véhicule', id: 1 },
     { name: 'Ajout Section Véhicule', id: 2 },
@@ -24,11 +34,14 @@ export class UsersComponent implements OnInit {
   ];
   /* tslint:enable quotemark */
   @ViewChild('child', { static: true }) child: DualListComponentC;
-
+  clickme(username: string) {
+    console.log('it does nothing', username);
+  }
   target = [];
   confirmed;
   message;
-  source = UsersComponent.tube;
+  source;
+  // source = UsersComponent.tube;
 
   compare(a: any, b: any) {
     const arr = UsersComponent.tube;
@@ -53,8 +66,7 @@ export class UsersComponent implements OnInit {
     private api: ApiService,
     private dialogService: NbDialogService,
     private formbuilder: FormBuilder
-  ) {
-  }
+  ) {}
 
   displayData() {
     if (this.child.confirmed.list.length !== 0) {
@@ -72,11 +84,18 @@ export class UsersComponent implements OnInit {
   usersData: any;
   formValue!: FormGroup;
   ngOnInit(): void {
-    this.getAllUsers();
-    this.formValue = this.formbuilder.group({
-      matricule: [''],
-      nomDutilisateur: [''],
-      role: [''],
+    // this.getAllUsers();
+    this.getAllRoles();
+    // this.source = this.formValue = this.formbuilder.group({
+    //   matricule: [''],
+    //   nomDutilisateur: [''],
+    //   role: [''],
+    // });
+  }
+
+  getAllRoles() {
+    this.api.getRoles().subscribe((res) => {
+      this.source = res;
     });
   }
 

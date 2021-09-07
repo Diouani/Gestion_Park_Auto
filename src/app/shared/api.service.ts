@@ -7,6 +7,21 @@ import { map } from 'rxjs/operators';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
+  getRoles() {
+    return this.http.get<any>('http://localhost:3000/privileges').pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  addRole(data: any) {
+    return this.http.post<any>('http://localhost:3000/roles', data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
   addUser(data: any) {
     return this.http.post<any>('http://localhost:3000/users', data).pipe(
       map((res: any) => {
