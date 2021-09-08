@@ -1,3 +1,4 @@
+import { GroupComponent } from './users/group/group.component';
 import { UsersComponent } from './users/users.component';
 import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { VehiculesComponent } from './dashboard/composants/vehicules/vehicules.c
 import { RegisterComponent } from './auth/register/register.component';
 import { TypesComponent } from './dashboard/composants/types/types.component';
 import { DualListComponentC } from './components/dual-list/dual-list.component';
-import { DualListThreeComponent } from './components/dual-list-three/dual-list-three.component';
+
+import { ManagingRolesComponent } from './components/managing-roles/managing-roles.component';
 // import { VehiculesTwoComponent } from './dashboard/composants/vehicules-two/vehicules-two.component';
 
 export const routes: Routes = [
@@ -44,10 +46,11 @@ export const routes: Routes = [
       // { path: 'composants/vehicule-two', component: VehiculesTwoComponent },
       { path: 'dual-list', component: DualListComponentC },
       {
-        path: 'users',
+        path: 'roles',
         component: UsersComponent,
       },
-      { path: '', component: DualListThreeComponent },
+      { path: 'groupes', component: GroupComponent },
+      
 
       { path: 'types', component: TypesComponent },
       {

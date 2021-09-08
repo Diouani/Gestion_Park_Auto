@@ -53,7 +53,10 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import {
   DualListComponentC,
 } from './components/dual-list/dual-list.component';
-import { DualListThreeComponent } from './components/dual-list-three/dual-list-three.component';
+
+import { ManagingRolesComponent } from './components/managing-roles/managing-roles.component';
+import { GroupComponent } from './users/group/group.component';
+import { RoleComponent } from './users/role/role.component';
 // import { DualListTransferComponent } from './components/dual-list-transfer/dual-list-transfer.component';
 
 @NgModule({
@@ -69,7 +72,9 @@ import { DualListThreeComponent } from './components/dual-list-three/dual-list-t
     TypesComponent,
     ModalComponent,
     DualListComponentC,
-    DualListThreeComponent,
+    ManagingRolesComponent,
+    GroupComponent,
+    RoleComponent,
     // DualListTransferComponent,
     // VehiculesTwoComponent,
   ],

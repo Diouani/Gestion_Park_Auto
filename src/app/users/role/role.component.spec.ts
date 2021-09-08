@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DualListThreeComponent } from './dual-list-three.component';
+import { RoleComponent } from './role.component';
 
-describe('DualListThreeComponent', () => {
-  let component: DualListThreeComponent;
-  let fixture: ComponentFixture<DualListThreeComponent>;
+describe('RoleComponent', () => {
+  let component: RoleComponent;
+  let fixture: ComponentFixture<RoleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DualListThreeComponent ]
+      declarations: [ RoleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DualListThreeComponent);
+    fixture = TestBed.createComponent(RoleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -21,19 +21,126 @@
   ],
   "roles": [
     {
-      "roleName": "Administrateur reseaux",
+      "name": "Chef Comptable",
       "privileges": [
-        { "name": "Lecture Section Véhicule", "id": 1 },
-        { "name": "Ajout Section Véhicule", "id": 2 },
-        { "name": "Mise a jour Section Véhicule", "id": 3 },
-        { "name": "Supression Section Véhicule", "id": 4 }
-      ]
+        {
+          "_id": 1,
+          "_name": "Lecture Section Véhicule"
+        },
+        {
+          "_id": 3,
+          "_name": "Mise a jour Section Véhicule"
+        },
+        {
+          "_id": 4,
+          "_name": "Supression Section Véhicule"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Opérateur de saisie",
+      "privileges": [
+        {
+          "_id": 3,
+          "_name": "Mise a jour Section Véhicule"
+        },
+        {
+          "_id": 4,
+          "_name": "Supression Section Véhicule"
+        },
+        {
+          "_id": 2,
+          "_name": "Ajout Section Véhicule"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Directeur General",
+      "privileges": [
+        {
+          "_id": 1,
+          "_name": "Lecture Section Véhicule"
+        },
+        {
+          "_id": 2,
+          "_name": "Ajout Section Véhicule"
+        },
+        {
+          "_id": 3,
+          "_name": "Mise a jour Section Véhicule"
+        },
+        {
+          "_id": 4,
+          "_name": "Supression Section Véhicule"
+        },
+        {
+          "_id": 33,
+          "_name": "Lecture Section Utilisateur"
+        },
+        {
+          "_id": 23,
+          "_name": "Ajout Section Utilisateur"
+        },
+        {
+          "_id": 32,
+          "_name": "Mise a jour Section Utilisateur"
+        },
+        {
+          "_id": 41,
+          "_name": "Supression Section Utilisateur"
+        }
+      ],
+      "id": 25
+    },
+    {
+      "name": "Role-Test",
+      "privileges": [
+        {
+          "_id": 32,
+          "_name": "Mise a jour Section Utilisateur"
+        },
+        {
+          "_id": 41,
+          "_name": "Supression Section Utilisateur"
+        }
+      ],
+      "id": 39
     }
   ],
   "privileges": [
-    { "name": "Lecture Section Véhicule", "id": 1 },
-    { "name": "Ajout Section Véhicule", "id": 2 },
-    { "name": "Mise a jour Section Véhicule", "id": 3 },
-    { "name": "Supression Section Véhicule", "id": 4 }
+    {
+      "name": "Lecture Section Véhicule",
+      "id": 1
+    },
+    {
+      "name": "Ajout Section Véhicule",
+      "id": 2
+    },
+    {
+      "name": "Mise a jour Section Véhicule",
+      "id": 3
+    },
+    {
+      "name": "Supression Section Véhicule",
+      "id": 4
+    },
+    {
+      "name": "Lecture Section Utilisateur",
+      "id": 33
+    },
+    {
+      "name": "Ajout Section Utilisateur",
+      "id": 23
+    },
+    {
+      "name": "Mise a jour Section Utilisateur",
+      "id": 32
+    },
+    {
+      "name": "Supression Section Utilisateur",
+      "id": 41
+    }
   ]
 }

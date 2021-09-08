@@ -8,6 +8,13 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getRoles() {
+    return this.http.get<any>('http://localhost:3000/roles').pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  getPrivileges() {
     return this.http.get<any>('http://localhost:3000/privileges').pipe(
       map((res: any) => {
         return res;

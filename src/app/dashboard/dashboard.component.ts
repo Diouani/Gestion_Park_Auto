@@ -95,8 +95,12 @@ export class DashboardComponent implements OnInit {
       link: '/users',
       children: [
         {
-          title: 'Gestion des utilisateurs',
-          link: '/home/users',
+          title: 'Gestion des Roles',
+          link: '/home/roles',
+        },
+        {
+          title: 'Gestion des Groupes',
+          link: '/home/groupes',
         },
       ],
     },
