@@ -1,4 +1,4 @@
-import { DualListComponentC } from './../components/dual-list/dual-list.component';
+import { DualListComponent } from './../components/dual-list/dual-list.component';
 import { ModalConfig } from './../components/modal/modal.config';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -7,7 +7,7 @@ import { ApiService } from '../shared/api.service';
 import { BackdropClickDialogComponent } from './modal/backdrop-dialog.component';
 import { ModalComponent } from '../components/modal/modal.component';
 import { ViewChild } from '@angular/core';
-import { DualListComponent } from 'angular-dual-listbox';
+
 import { UserManagementServiceService } from '../shared/management.service';
 
 @Component({
@@ -53,7 +53,7 @@ export class UsersComponent implements OnInit {
     { name: 'Suupression Section Véhicule', id: 5 },
   ];
   /* tslint:enable quotemark */
-  @ViewChild('child', { static: true }) child: DualListComponentC;
+  @ViewChild('child', { static: true }) child: DualListComponent;
   clickme(username: string) {
     console.log('it does nothing', username);
   }

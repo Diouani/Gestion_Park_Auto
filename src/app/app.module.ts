@@ -49,13 +49,11 @@ import { SweetAlertService } from 'angular-sweetalert-service';
 import { DataTablesModule } from 'angular-datatables';
 import { UiSwitchModule } from 'ngx-ui-switch';
 import { VehiculesTwoComponent } from './dashboard/vehicules-two/vehicules-two.component';
-import { AngularDualListBoxModule } from 'angular-dual-listbox';
-import {
-  DualListComponentC,
-} from './components/dual-list/dual-list.component';
+
+import { DualListComponent } from './components/dual-list/dual-list.component';
 
 import { ManagingRolesComponent } from './components/managing-roles/managing-roles.component';
-import { GroupComponent } from './users/group/group.component';
+// import { GroupComponent } from './users/group/group.component';
 import { RoleComponent } from './users/role/role.component';
 // import { DualListTransferComponent } from './components/dual-list-transfer/dual-list-transfer.component';
 
@@ -71,15 +69,14 @@ import { RoleComponent } from './users/role/role.component';
     DialogBackdropClickComponent,
     TypesComponent,
     ModalComponent,
-    DualListComponentC,
+    DualListComponent,
     ManagingRolesComponent,
-    GroupComponent,
+    // GroupComponent,
     RoleComponent,
     // DualListTransferComponent,
     // VehiculesTwoComponent,
   ],
   imports: [
-    AngularDualListBoxModule,
     Ng2SmartTableModule,
     NbCardModule,
     NbTabsetModule,

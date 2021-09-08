@@ -14,7 +14,7 @@
       [ngClass]="direction() ? 'point-right' : 'point-left'"
       [disabled]="available.pick.length === 0"
     >
-      Ajouter
+      {{ format.add }}
     </button>
 
     <form *ngIf="filter" class="filter">
@@ -33,7 +33,6 @@
         (drop)="drop($event, confirmed)"
         (dragover)="allowDrop($event, available)"
         (dragleave)="dragLeave()"
-        *ngIf="source as source"
       >
         <li
           *ngFor="let item of available.sift; let idx = index"
@@ -53,6 +52,7 @@
         </li>
       </ul>
     </div>
+    {{ available | json }}
 
     <div class="button-bar">
       <button
@@ -61,7 +61,7 @@
         (click)="selectAll(available)"
         [disabled]="disabled || isAllSelected(available)"
       >
-        Sélectionner tout
+        {{ format.all }}
       </button>
       <button
         type="button"
@@ -69,9 +69,8 @@
         (click)="selectNone(available)"
         [disabled]="!isAnySelected(available)"
       >
-        Unselect
+        {{ format.none }}
       </button>
-      <!-- <pre>{{ available | json }}</pre> -->
     </div>
   </div>
 
@@ -90,7 +89,7 @@
       [ngClass]="direction() ? 'point-left' : 'point-right'"
       [disabled]="confirmed.pick.length === 0"
     >
-      Supprimer
+      {{ format.remove }}
     </button>
 
     <form *ngIf="filter" class="filter">
@@ -137,7 +136,7 @@
         (click)="selectAll(confirmed)"
         [disabled]="disabled || isAllSelected(confirmed)"
       >
-        Sélectionner tout
+        {{ format.all }}
       </button>
       <button
         type="button"
@@ -145,7 +144,7 @@
         (click)="selectNone(confirmed)"
         [disabled]="!isAnySelected(confirmed)"
       >
-        Unselect ???
+        {{ format.none }}
       </button>
     </div>
   </div>

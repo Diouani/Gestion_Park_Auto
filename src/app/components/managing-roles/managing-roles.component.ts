@@ -1,7 +1,8 @@
 import { IterableDiffers, Input } from '@angular/core';
 import { Component, OnInit, Output } from '@angular/core';
-import { DualListComponent } from 'angular-dual-listbox';
+
 import { EventEmitter } from '@angular/core';
+import { DualListComponent } from '../dual-list/dual-list.component';
 
 @Component({
   selector: 'app-managing-roles',

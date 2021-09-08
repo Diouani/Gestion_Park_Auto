@@ -1,4 +1,5 @@
-import { GroupComponent } from './users/group/group.component';
+import { RoleComponent } from './users/role/role.component';
+// import { GroupComponent } from './users/group/group.component';
 import { UsersComponent } from './users/users.component';
 import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,7 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { VehiculesComponent } from './dashboard/composants/vehicules/vehicules.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { TypesComponent } from './dashboard/composants/types/types.component';
-import { DualListComponentC } from './components/dual-list/dual-list.component';
+import { DualListComponent } from './components/dual-list/dual-list.component';
 
 import { ManagingRolesComponent } from './components/managing-roles/managing-roles.component';
 // import { VehiculesTwoComponent } from './dashboard/composants/vehicules-two/vehicules-two.component';
@@ -44,13 +45,12 @@ export const routes: Routes = [
     children: [
       { path: 'composants/vehicule', component: VehiculesComponent },
       // { path: 'composants/vehicule-two', component: VehiculesTwoComponent },
-      { path: 'dual-list', component: DualListComponentC },
+      { path: 'dual-list', component: DualListComponent },
       {
         path: 'roles',
-        component: UsersComponent,
+        component: RoleComponent,
       },
-      { path: 'groupes', component: GroupComponent },
-      
+      // { path: 'groupes', component: GroupComponent },
 
       { path: 'types', component: TypesComponent },
       {
