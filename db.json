@@ -74,6 +74,10 @@
         {
           "name": "Supression Section Véhicule",
           "id": 4
+        },
+        {
+          "name": "Mise a jour Section Véhicule",
+          "id": 3
         }
       ],
       "id": 10
@@ -131,6 +135,44 @@
         }
       ],
       "id": 50
+    },
+    {
+      "name": "Developpeur Java",
+      "privileges": [
+        {
+          "name": "Mise a jour Section Véhicule",
+          "id": 3
+        },
+        {
+          "name": "Ajout Section Utilisateur",
+          "id": 23
+        },
+        {
+          "name": "Ajout Section Véhicule",
+          "id": 2
+        },
+        {
+          "name": "Mise a jour Section Utilisateur",
+          "id": 32
+        },
+        {
+          "name": "Lecture Section Véhicule",
+          "id": 1
+        },
+        {
+          "name": "Supression Section Véhicule",
+          "id": 4
+        },
+        {
+          "name": "Lecture Section Utilisateur",
+          "id": 33
+        },
+        {
+          "name": "Supression Section Utilisateur",
+          "id": 41
+        }
+      ],
+      "id": 25
     }
   ],
   "privileges": [
@@ -165,6 +207,57 @@
     {
       "name": "Supression Section Utilisateur",
       "id": 41
+    }
+  ],
+  "groupes": [
+    {
+      "groupName": "Administrateurs",
+      "roles": [
+        {
+          "name": "Operateur Reseau",
+          "id": 31
+        },
+        {
+          "name": "Empty Role",
+          "id": 38
+        }
+      ]
+    },
+    {
+      "groupName": "GroupTestFinal",
+      "roles": [
+        {
+          "name": "Test-Synch2",
+          "id": 50
+        },
+        {
+          "name": "TestReload",
+          "id": 37
+        },
+        {
+          "name": "Empty Role",
+          "id": 38
+        }
+      ],
+      "id": 7
+    },
+    {
+      "groupName": "GroupeTestUpdate",
+      "roles": [
+        {
+          "name": "TestReload",
+          "id": 37
+        },
+        {
+          "name": "Empty Role",
+          "id": 38
+        },
+        {
+          "name": "Test-Synch2",
+          "id": 50
+        }
+      ],
+      "id": 12
     }
   ]
 }

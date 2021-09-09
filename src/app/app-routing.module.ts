@@ -18,6 +18,7 @@ import { TypesComponent } from './dashboard/composants/types/types.component';
 import { DualListComponent } from './components/dual-list/dual-list.component';
 
 import { ManagingRolesComponent } from './components/managing-roles/managing-roles.component';
+import { GroupeComponent } from './users/groupe/groupe.component';
 // import { VehiculesTwoComponent } from './dashboard/composants/vehicules-two/vehicules-two.component';
 
 export const routes: Routes = [
@@ -50,7 +51,7 @@ export const routes: Routes = [
         path: 'roles',
         component: RoleComponent,
       },
-      // { path: 'groupes', component: GroupComponent },
+      { path: 'groupes', component: GroupeComponent },
 
       { path: 'types', component: TypesComponent },
       {

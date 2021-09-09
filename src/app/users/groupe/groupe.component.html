@@ -1,0 +1,75 @@
+<nb-card>
+  <nb-tabset fullWidth>
+    <nb-tab tabTitle="Ajouter un groupe">
+      <nb-card-body>
+        <label for="" class="mb-3">
+          <strong>Intitulé du groupe</strong>
+        </label>
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="groupName"
+          name="groupName"
+          [(ngModel)]="groupName"
+        />
+
+        <div style="text-align: center">
+          <p></p>
+          <dual-list
+            [sort]="keepSorted"
+            [source]="source"
+            [key]="key"
+            [display]="display"
+            [filter]="filter"
+            [(destination)]="confirmed"
+            height="500px"
+            [format]="format"
+            [disabled]="disabled"
+          ></dual-list>
+        </div>
+      </nb-card-body>
+      <nb-card-footer>
+        <div class="d-flex justify-content-between bd-highlight">
+          <span style="padding: 10px"></span>
+          <button (click)="addingGroup()" class="btn btn-primary">
+            Ajout du Groupe
+          </button>
+        </div>
+      </nb-card-footer>
+    </nb-tab>
+    <nb-tab tabTitle="Modifier un groupe">
+      <div *ngIf="selected == undefined">
+        <nb-card-header> Groupes </nb-card-header>
+        <nb-list style="margin-top: 20px">
+          <nb-list-item (click)="console(group)" *ngFor="let group of groups">
+            {{ group.groupName }}
+          </nb-list-item>
+        </nb-list>
+      </div>
+      <div *ngIf="selected !== undefined">
+        <button class="btn btn-secondary" (click)="refresh()">Back</button>
+        <div style="text-align: center">
+          <h1>{{ selected.groupName }}</h1>
+          <dual-list
+            [sort]="keepSorted"
+            [source]="source"
+            [key]="key"
+            [display]="display"
+            [filter]="filter"
+            [(destination)]="privilegesAssignes"
+            height="500px"
+            [format]="format"
+            [disabled]="disabled"
+          ></dual-list>
+          <button
+            (click)="updateRole(privilegesAssignes, selected)"
+            class="btn btn-primary"
+          >
+            Update Groupe
+          </button>
+        </div>
+      </div>
+    </nb-tab>
+    <nb-tab tabTitle="Assigner un groupe"> Assigner </nb-tab>
+  </nb-tabset>
+</nb-card>

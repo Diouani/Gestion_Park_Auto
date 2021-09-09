@@ -36,6 +36,28 @@ export class ApiService {
     );
   }
 
+  addGroup(data: any) {
+    return this.http.post<any>('http://localhost:3000/groupes', data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  getGroups() {
+    return this.http.get<any>('http://localhost:3000/groupes').pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  updateGroup(data: any, id: number) {
+    return this.http.put<any>('http://localhost:3000/groupes/' + id, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
   addUser(data: any) {
     return this.http.post<any>('http://localhost:3000/users', data).pipe(
       map((res: any) => {

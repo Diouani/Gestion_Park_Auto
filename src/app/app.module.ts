@@ -57,6 +57,7 @@ import { DualListComponent } from './components/dual-list/dual-list.component';
 import { ManagingRolesComponent } from './components/managing-roles/managing-roles.component';
 // import { GroupComponent } from './users/group/group.component';
 import { RoleComponent } from './users/role/role.component';
+import { GroupeComponent } from './users/groupe/groupe.component';
 // import { DualListTransferComponent } from './components/dual-list-transfer/dual-list-transfer.component';
 
 @NgModule({
@@ -75,6 +76,7 @@ import { RoleComponent } from './users/role/role.component';
     ManagingRolesComponent,
     // GroupComponent,
     RoleComponent,
+    GroupeComponent,
     // DualListTransferComponent,
     // VehiculesTwoComponent,
   ],
