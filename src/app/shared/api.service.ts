@@ -14,6 +14,13 @@ export class ApiService {
       })
     );
   }
+  updateRole(data: any, id: number) {
+    return this.http.put<any>('http://localhost:3000/roles/' + id, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
   getPrivileges() {
     return this.http.get<any>('http://localhost:3000/privileges').pipe(
       map((res: any) => {

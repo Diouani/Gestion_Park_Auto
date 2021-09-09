@@ -7,6 +7,7 @@ import {
   OnChanges,
   Output,
   SimpleChange,
+  HostListener,
 } from '@angular/core';
 
 import { BasicList } from './basic-list';
@@ -14,7 +15,7 @@ import { BasicList } from './basic-list';
 export type compareFunction = (a: any, b: any) => number;
 
 var nextId = 0;
-
+@HostListener('unloaded')
 @Component({
   selector: 'dual-list',
   styleUrls: ['./dual-list.component.scss'],
@@ -63,6 +64,9 @@ export class DualListComponent implements DoCheck, OnChanges {
   constructor(private differs: IterableDiffers) {
     this.available = new BasicList(DualListComponent.AVAILABLE_LIST_NAME);
     this.confirmed = new BasicList(DualListComponent.CONFIRMED_LIST_NAME);
+  }
+  ngOndestroy() {
+    console.log('test');
   }
 
   ngOnChanges(changeRecord: { [key: string]: SimpleChange }) {

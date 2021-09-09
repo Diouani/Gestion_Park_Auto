@@ -21,92 +21,116 @@
   ],
   "roles": [
     {
-      "name": "Chef Comptable",
+      "name": "Operateur Reseau",
       "privileges": [
         {
-          "_id": 1,
-          "_name": "Lecture Section Véhicule"
+          "name": "Supression Section Véhicule",
+          "id": 4
         },
         {
-          "_id": 3,
-          "_name": "Mise a jour Section Véhicule"
+          "name": "Mise a jour Section Utilisateur",
+          "id": 32
         },
         {
-          "_id": 4,
-          "_name": "Supression Section Véhicule"
+          "name": "Lecture Section Utilisateur",
+          "id": 33
         }
       ],
-      "id": 4
+      "id": 31
     },
     {
-      "name": "Opérateur de saisie",
+      "name": "Empty Role",
       "privileges": [
         {
-          "_id": 3,
-          "_name": "Mise a jour Section Véhicule"
+          "name": "Supression Section Utilisateur",
+          "id": 41
         },
         {
-          "_id": 4,
-          "_name": "Supression Section Véhicule"
+          "name": "Mise a jour Section Utilisateur",
+          "id": 32
         },
         {
-          "_id": 2,
-          "_name": "Ajout Section Véhicule"
+          "name": "Lecture Section Utilisateur",
+          "id": 33
+        },
+        {
+          "name": "Supression Section Véhicule",
+          "id": 4
+        },
+        {
+          "name": "Ajout Section Utilisateur",
+          "id": 23
+        },
+        {
+          "name": "Mise a jour Section Véhicule",
+          "id": 3
         }
       ],
-      "id": 3
+      "id": 38
     },
     {
-      "name": "Directeur General",
+      "name": "Test-rest source",
       "privileges": [
         {
-          "_id": 1,
-          "_name": "Lecture Section Véhicule"
-        },
-        {
-          "_id": 2,
-          "_name": "Ajout Section Véhicule"
-        },
-        {
-          "_id": 3,
-          "_name": "Mise a jour Section Véhicule"
-        },
-        {
-          "_id": 4,
-          "_name": "Supression Section Véhicule"
-        },
-        {
-          "_id": 33,
-          "_name": "Lecture Section Utilisateur"
-        },
-        {
-          "_id": 23,
-          "_name": "Ajout Section Utilisateur"
-        },
-        {
-          "_id": 32,
-          "_name": "Mise a jour Section Utilisateur"
-        },
-        {
-          "_id": 41,
-          "_name": "Supression Section Utilisateur"
+          "name": "Supression Section Véhicule",
+          "id": 4
         }
       ],
-      "id": 25
+      "id": 10
     },
     {
-      "name": "Role-Test",
+      "name": "TestReload",
       "privileges": [
         {
-          "_id": 32,
-          "_name": "Mise a jour Section Utilisateur"
+          "name": "Supression Section Utilisateur",
+          "id": 41
         },
         {
-          "_id": 41,
-          "_name": "Supression Section Utilisateur"
+          "name": "Ajout Section Utilisateur",
+          "id": 23
+        },
+        {
+          "name": "Mise a jour Section Utilisateur",
+          "id": 32
         }
       ],
-      "id": 39
+      "id": 37
+    },
+    {
+      "name": "Test-Synch",
+      "privileges": [
+        {
+          "name": "Mise a jour Section Utilisateur",
+          "id": 32
+        },
+        {
+          "name": "Mise a jour Section Véhicule",
+          "id": 3
+        },
+        {
+          "name": "Supression Section Véhicule",
+          "id": 4
+        }
+      ],
+      "id": 20
+    },
+    {
+      "name": "Test-Synch2",
+      "privileges": [
+        {
+          "name": "Supression Section Utilisateur",
+          "id": 41
+        },
+        {
+          "name": "Mise a jour Section Utilisateur",
+          "id": 32
+        },
+        {
+          "name": "Lecture Section Utilisateur",
+          "id": 33
+        }
+      ],
+      "id": 50
     }
   ],
   "privileges": [

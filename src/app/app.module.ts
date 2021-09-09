@@ -19,6 +19,8 @@ import {
   NbDialogModule,
   NbCardModule,
   NbDialogRef,
+  NbListComponent,
+  NbListModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {
@@ -77,6 +79,7 @@ import { RoleComponent } from './users/role/role.component';
     // VehiculesTwoComponent,
   ],
   imports: [
+    NbListModule,
     Ng2SmartTableModule,
     NbCardModule,
     NbTabsetModule,

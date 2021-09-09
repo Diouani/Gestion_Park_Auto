@@ -1,6 +1,7 @@
 import { ApiService } from './../../shared/api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DualListComponent } from 'src/app/components/dual-list/dual-list.component';
+import { NbListComponent } from '@nebular/theme';
 
 @Component({
   selector: 'app-role',
@@ -8,8 +9,9 @@ import { DualListComponent } from 'src/app/components/dual-list/dual-list.compon
   styleUrls: ['./role.component.scss'],
 })
 export class RoleComponent implements OnInit {
+  selected;
   constructor(private api: ApiService) {}
-  data = [];
+  data = {};
   tab = 1;
   keepSorted = false;
   key: string;
@@ -17,10 +19,15 @@ export class RoleComponent implements OnInit {
   filter = false;
   source: Array<any>;
   confirmed: Array<any>;
+  privilegesAssignes: Array<any>;
   userAdd = '';
   disabled = false;
   roleName: string;
   sourceLeft = true;
+  container = {};
+  privileges = [];
+  roles;
+  updatedValue;
   format: any = DualListComponent.DEFAULT_FORMAT;
 
   private sourceStations: Array<any>;
@@ -32,14 +39,25 @@ export class RoleComponent implements OnInit {
   ngOnInit() {
     this.doReset();
   }
+  refresh() {
+    this.selected = undefined;
+  }
+
+  console(hello) {
+    this.selected = hello;
+
+    this.privilegesAssignes = hello.privileges;
+    console.log(this.privilegesAssignes);
+  }
+
   addingRole() {
-    this.roleName['roleName'] = username;
-    console.log(this.roleName);
-    this.privileges = confirmed;
+    this.container['name'] = this.roleName;
+    console.log(this.container);
+    this.privileges = this.confirmed;
     console.log(this.privileges);
-    this.roleName['privileges'] = this.privileges;
-    this.roleName['id'] = 3;
-    this.data = this.roleName;
+    this.container['privileges'] = this.privileges;
+    this.container['id'] = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+    this.data = this.container;
 
     // this.data.push({ roleName: username });
     // this.data.push({ privileges: confirmed });
@@ -48,7 +66,8 @@ export class RoleComponent implements OnInit {
       (res) => {
         console.log(res);
         alert('Role Added succesfully');
-        // this.formValue.reset();
+        this.roleName = '';
+        this.ngOnInit();
       },
       (err) => {
         alert('Something Went Wrong');
@@ -56,6 +75,30 @@ export class RoleComponent implements OnInit {
     );
   }
   getAllRoles() {
+    this.api.getRoles().subscribe((res) => {
+      this.roles = res;
+    });
+  }
+  updateRole(privilegesAssignes, selected) {
+    this.updatedValue = {
+      name: this.selected.name,
+      privileges: this.privilegesAssignes,
+      id: this.selected.id,
+    };
+    console.log(this.updatedValue);
+    this.api.updateRole(this.updatedValue, selected.id).subscribe(
+      (res) => {
+        console.log(res);
+        alert('Role Updataed succesfully');
+        this.selected = undefined;
+      },
+      (err) => {
+        alert('Something Went Wrong');
+      }
+    );
+  }
+
+  getAllPrivileges() {
     this.api.getPrivileges().subscribe((res) => {
       this.confirmedStations = new Array<any>();
       this.stations = res;
@@ -63,14 +106,13 @@ export class RoleComponent implements OnInit {
       this.key = 'id';
       this.display = 'name'; // [ 'station', 'state' ];
       this.keepSorted = true;
-      console.log(this.sourceStations);
       this.source = this.sourceStations;
       this.confirmed = this.confirmedStations;
-      console.log(this.source);
     });
   }
   private useStations() {}
   doReset() {
+    this.getAllPrivileges();
     this.getAllRoles();
 
     // Preconfirm some items.
