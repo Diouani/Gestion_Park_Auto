@@ -1,27 +1,3 @@
-@import "../../../../themes";
-@import "../../../../styles";
-@include nb-install-component() {
-  nb-card {
-    transform: translate3d(0, 0, 0);
-  }
-}
-.order-table {
-  thead th.ng2-smart-actions.ng-star-inserted {
-    width: 1em;
-  }
-
-  td.ng2-smart-actions {
-    float: left !important;
-
-    ng2-st-tbody-custom {
-      float: left;
-      width: auto;
-      display: flex;
-      margin-top: 0.5em;
-
-      a.ng2-smart-action.ng2-smart-action-custom-custom {
-        margin-left: 0.5em;
-      }
-    }
-  }
+.content-active {
+  margin-top: 5%;
 }

@@ -1,13 +1,14 @@
 <nb-card>
-  <nb-card-header> Liste des véhicules </nb-card-header>
+  <!-- <nb-card-header> Liste des véhicules </nb-card-header> -->
 
   <nb-card-body>
-    <ng2-smart-table
-      class="order-table"
-      [settings]="settings"
-      [source]="source"
-      (deleteConfirm)="onDeleteConfirm($event)"
-    >
-    </ng2-smart-table>
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="Marques de véhicules">
+        <app-marque-vehicule></app-marque-vehicule>
+      </nb-tab>
+      <nb-tab tabTitle="Modeles de Véhicules"> Type de Paiements </nb-tab>
+      <nb-tab tabTitle="Genre d'utilisations"> Type de Véhicules </nb-tab>
+      <nb-tab tabTitle="Accessoires de véhicules"> Type de Véhicules </nb-tab>
+    </nb-tabset>
   </nb-card-body>
 </nb-card>

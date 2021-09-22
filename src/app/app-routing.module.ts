@@ -22,42 +22,42 @@ import { GroupeComponent } from './users/groupe/groupe.component';
 // import { VehiculesTwoComponent } from './dashboard/composants/vehicules-two/vehicules-two.component';
 
 export const routes: Routes = [
-  {
-    path: 'auth',
-    component: NbAuthComponent,
-    // canActivate: [LoginGuard],
+  // {
+  //   path: 'auth',
+  //   component: NbAuthComponent,
+  //   // canActivate: [LoginGuard],
 
-    children: [
-      {
-        path: 'login',
-        component: NgxLoginComponent,
-      },
-      {
-        path: 'register',
-        component: RegisterComponent,
-      },
-    ],
-  },
+  //   children: [
+  //     {
+  //       path: 'login',
+  //       component: NgxLoginComponent,
+  //     },
+  //     {
+  //       path: 'register',
+  //       component: RegisterComponent,
+  //     },
+  //   ],
+  // },
 
   {
     path: 'home',
     component: DashboardComponent,
-    canActivate: [AuthGuard],
+    /* canActivate: [AuthGuard], */
     children: [
       { path: 'composants/vehicule', component: VehiculesComponent },
       // { path: 'composants/vehicule-two', component: VehiculesTwoComponent },
-      { path: 'dual-list', component: DualListComponent },
-      {
-        path: 'roles',
-        component: RoleComponent,
-      },
-      { path: 'groupes', component: GroupeComponent },
+      // { path: 'dual-list', component: DualListComponent },
+      // {
+      //   path: 'roles',
+      //   component: RoleComponent,
+      // },
+      // { path: 'groupes', component: GroupeComponent },
 
-      { path: 'types', component: TypesComponent },
-      {
-        path: 'register',
-        component: RegisterComponent,
-      },
+      // { path: 'types', component: TypesComponent },
+      // {
+      //   path: 'register',
+      //   component: RegisterComponent,
+      // },
     ],
   },
   {

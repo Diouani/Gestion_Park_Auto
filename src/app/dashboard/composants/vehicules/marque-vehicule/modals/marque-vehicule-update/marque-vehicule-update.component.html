@@ -1,0 +1,35 @@
+<div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel3">Update Section</h5>
+        <button type="button" class="btn-close" (click)="close()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="sectioname" class="form-label">Nom de la section</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sectionNameUpdate"
+            [(ngModel)]="libelle"
+          />
+          <br />
+  
+          <label for="sectioname" class="form-label">Commentaire </label>
+          <textarea
+            class="form-control"
+            [(ngModel)]="libelle_comment"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" (click)="updateSection()">
+          Update section
+        </button>
+        <button class="btn btn-secondary" (click)="close()">Back</button>
+      </div>
+    </div>
+  </div>
+  

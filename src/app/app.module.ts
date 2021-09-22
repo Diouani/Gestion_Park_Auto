@@ -21,6 +21,7 @@ import {
   NbDialogRef,
   NbListComponent,
   NbListModule,
+  NbButtonModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {
@@ -58,6 +59,9 @@ import { ManagingRolesComponent } from './components/managing-roles/managing-rol
 // import { GroupComponent } from './users/group/group.component';
 import { RoleComponent } from './users/role/role.component';
 import { GroupeComponent } from './users/groupe/groupe.component';
+import { MarqueVehiculeComponent } from './dashboard/composants/vehicules/marque-vehicule/marque-vehicule.component';
+import { MarqueVehiculeAddComponent } from './dashboard/composants/vehicules/marque-vehicule/modals/marque-vehicule-add/marque-vehicule-add.component';
+import { MarqueVehiculeUpdateComponent } from './dashboard/composants/vehicules/marque-vehicule/modals/marque-vehicule-update/marque-vehicule-update.component';
 // import { DualListTransferComponent } from './components/dual-list-transfer/dual-list-transfer.component';
 
 @NgModule({
@@ -67,7 +71,7 @@ import { GroupeComponent } from './users/groupe/groupe.component';
     HomeComponent,
     UsersComponent,
     DashboardComponent,
-    VehiculesComponent,
+
     BackdropClickDialogComponent,
     DialogBackdropClickComponent,
     TypesComponent,
@@ -77,8 +81,12 @@ import { GroupeComponent } from './users/groupe/groupe.component';
     // GroupComponent,
     RoleComponent,
     GroupeComponent,
+    VehiculesComponent,
     // DualListTransferComponent,
     // VehiculesTwoComponent,
+    MarqueVehiculeAddComponent,
+    MarqueVehiculeUpdateComponent,
+    MarqueVehiculeComponent,
   ],
   imports: [
     NbListModule,
@@ -133,13 +141,9 @@ import { GroupeComponent } from './users/groupe/groupe.component';
     NgbModule,
     DataTablesModule,
     UiSwitchModule,
+    NbButtonModule,
   ],
-  providers: [
-    { provide: NbRoleProvider, useClass: RoleProvider },
-    AuthGuard,
-    SmartTableService,
-    SweetAlertService,
-  ],
+  providers: [{ provide: NbRoleProvider, useClass: RoleProvider }, AuthGuard],
 
   bootstrap: [AppComponent],
 })

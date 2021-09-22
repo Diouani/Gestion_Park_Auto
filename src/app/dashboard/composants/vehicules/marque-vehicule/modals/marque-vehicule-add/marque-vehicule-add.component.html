@@ -1,0 +1,39 @@
+<div class="modal-dialog modal-dialog-centered modal-xl">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalToggleLabel2">
+        Ajout d'une marque
+      </h5>
+      <button type="button" class="btn-close" (click)="close()"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="sectioname" class="form-label">Nom de la Marque</label>
+          <input
+            type="text"
+            class="form-control"
+            id="MarqueName"
+            [(ngModel)]="marqueName"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <br />
+
+          <label for="sectioname" class="form-label">Commentaire</label>
+          <textarea
+            class="form-control"
+            id="sectionComment"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary" (click)="addMarque()">
+        Ajouter la marque
+      </button>
+      <button class="btn btn-secondary" (click)="close()">Retour</button>
+    </div>
+  </div>
+</div>

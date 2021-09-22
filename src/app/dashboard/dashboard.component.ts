@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NbAccessChecker } from '@nebular/security';
 import { NbMenuItem, NbSidebarService } from '@nebular/theme';
 
 @Component({
@@ -23,10 +22,6 @@ export class DashboardComponent implements OnInit {
         {
           title: 'Véhicules',
           link: 'composants/vehicule',
-        },
-        {
-          title: 'Véhicules-two',
-          link: 'composants/vehicule-two',
         },
         {
           title: 'Fournisseurs',

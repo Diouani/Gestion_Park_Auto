@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 
 import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
 import { NbRoleProvider } from '@nebular/security';
-import { of } from 'rxjs';
+
 
 @Injectable()
 export class RoleProvider implements NbRoleProvider {
